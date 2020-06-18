@@ -82,12 +82,16 @@ margin-right: 5px;
   justify-content: space-between;
   height: 100%;
 }
+a{
+  text-decoration: none;
+}
 .product-img{
 max-width: 34rem;
 max-height: 34rem;
 }
 .product-name{
   font-size: 2rem;
+  font-weight: bold;
 }
 .product-brand{
   font-size: 1.2rem;
@@ -96,4 +100,37 @@ max-height: 34rem;
 .product-price{
   font-size: 2.5rem;
   font-weight: bold;
+}
+
+/* side bar */
+
+.product-menu {
+  background: none;
+  border: none;
+  padding:.3rem;
+  color: #ffff;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.sidebar{
+  position: fixed;
+  transform: translate(-30rem);
+  width: 30rem;
+  background-color:#ffffffd8;
+  height: 100%;
+}
+.sidebar.open{
+  transform: translate(0);
+}
+.closeMenu{
+  background: none;
+  border: none;
+  font-size: 2rem;
+cursor: pointer;
+position: absolute;
+right: 1rem;
+top: 1.5rem;
+
 }

@@ -10,6 +10,7 @@
 <div class="grid-container">
   <header class="header">
     <div class="brand">
+      <button class="product-menu" onclick="openMenu()"> &#9776;</button>
       <a href="index.html">Yo-shop 🔥</a>
     </div>
     <div class="brand-links">
@@ -17,16 +18,43 @@
       <a href="#" class="">signin</a>
     </div>
   </header>
-
+<aside class="sidebar"> 
+  <h3>shopping catagories</h3>
+  <button class="closeMenu" onclick="closeMenu()">&#x274C</button>
+  <ul>
+    <li>
+      <a href="#">paints</a>
+    </li>
+    <li>
+      <a href="#">shirt</a>
+    </li>
+  </ul>
+</aside>
   <main class="main">
 <div class="content">
       <ul class="products">
-        <li class='product'>
+        <li class="product">
           <img src="./images/p-1.jpg" alt="slim shirt" class="product-img">
-          <div class="product-name"> <a>slim shirt</a> </div>
+          <div class="product-name"> <a href= "#">woman slim shirt</a> </div>
+          <div class="product-brand">black dream</div>
+          <div class="product-price">$40</div>
+          <div class="product-rating">4.2 rating (12 review)</div>
+        </li>
+
+        <li class="product">
+          <img src="./images/p-2.jpg" alt="slim shirt" class="product-img">
+          <div class="product-name"> <a href= "#">slim shirt</a> </div>
           <div class="product-brand">nike</div>
           <div class="product-price">$60</div>
-          <div class="product-rating">4.5 rating (10 review)</div>
+          <div class="product-rating">4.6 rating (10 review)</div>
+        </li>
+
+        <li class="product">
+          <img src="./images/p-3.jpg" alt="slim shirt" class="product-img">
+          <div class="product-name"> <a href= "#">party dress </a> </div>
+          <div class="product-brand">zara</div>
+          <div class="product-price">$50</div>
+          <div class="product-rating">4.4 rating (10 review)</div>
         </li>
       </ul>
 </div>
@@ -35,5 +63,14 @@
     copyright © reserved by yogesh mishra 
   </footer>
 </div>
+
+<script>
+  const openMenu = () => {
+    document.querySelector(".sidebar").classList.add("open")
+  }
+  const closeMenu = () => {
+    document.querySelector(".sidebar").classList.remove("open")
+  }
+</script>
 </body>
 </html>
