@@ -1,10 +1,13 @@
 import React from 'react';
-import '../index.css';
+import '../assets/style/index.css';
 export default function sidebar() {
+  const closeMenu = () => {
+    document.querySelector('.sidebar').classList.remove('open');
+  };
   return (
     <aside className="sidebar">
       <h3>shopping catagories</h3>
-      <button className="closeMenu" onclick="closeMenu()">
+      <button className="closeMenu" onclick={closeMenu}>
         &#x274C;
       </button>
       <ul>

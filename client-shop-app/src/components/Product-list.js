@@ -1,6 +1,6 @@
 import React from 'react';
 import Product from './product';
-import '../index.css';
+import '../assets/style/index.css';
 export default function products() {
   return (
     <main className="main">

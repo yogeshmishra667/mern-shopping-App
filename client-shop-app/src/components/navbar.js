@@ -1,11 +1,14 @@
 import React from 'react';
-import '../index.css';
+import '../assets/style/index.css';
 
 export default function navbar() {
+  const openMenu = () => {
+    document.querySelector('.sidebar').classList.add('open');
+  };
   return (
     <header className="header">
       <div className="brand">
-        <button className="product-menu" onclick="openMenu()">
+        <button className="product-menu" onclick={openMenu}>
           &#9776;
         </button>
         <a href="index.html">Yo-shop 🔥</a>
