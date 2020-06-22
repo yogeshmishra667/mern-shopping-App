@@ -7,9 +7,6 @@ export default function products() {
       <div className="content">
         <ul className="products">
           <Product />
-          <Product />
-          <Product />
-          <Product />
         </ul>
       </div>
     </main>

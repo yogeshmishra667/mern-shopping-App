@@ -8,7 +8,7 @@ export default function navbar() {
   return (
     <header className="header">
       <div className="brand">
-        <button className="product-menu" onclick={openMenu}>
+        <button className="product-menu" onClick={openMenu}>
           &#9776;
         </button>
         <a href="index.html">Yo-shop 🔥</a>

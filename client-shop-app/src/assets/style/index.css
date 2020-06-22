@@ -115,6 +115,7 @@ a {
 
 .sidebar {
   position: fixed;
+  transition: all 0.5s;
   transform: translate(-30rem);
   width: 30rem;
   background-color: #ffffffd8;

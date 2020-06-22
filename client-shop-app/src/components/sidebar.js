@@ -7,7 +7,7 @@ export default function sidebar() {
   return (
     <aside className="sidebar">
       <h3>shopping catagories</h3>
-      <button className="closeMenu" onclick={closeMenu}>
+      <button className="closeMenu" onClick={closeMenu}>
         &#x274C;
       </button>
       <ul>
