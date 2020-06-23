@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/style/index.css';
 
 export default function navbar() {
@@ -11,7 +12,7 @@ export default function navbar() {
         <button className="product-menu" onClick={openMenu}>
           &#9776;
         </button>
-        <a href="index.html">Yo-shop 🔥</a>
+        <Link to="/">Yo-shop 🔥</Link>
       </div>
       <div className="brand-links">
         <a href="#" className="">
