@@ -1,7 +1,7 @@
 export default {
   products: [
     {
-      _id: 1,
+      _id: '1',
       image: './images/p-1.jpg',
       catagories: 'shirt',
       name: 'woman slim shirt',
@@ -12,7 +12,7 @@ export default {
     },
 
     {
-      _id: 2,
+      _id: '2',
       image: './images/p-2.jpg',
       catagories: 'shirt',
       name: 'slim shirt',
@@ -22,7 +22,7 @@ export default {
       numReview: 122,
     },
     {
-      _id: 3,
+      _id: '3',
       image: './images/p-3.jpg',
       catagories: 'shirt',
       name: 'party dress',
