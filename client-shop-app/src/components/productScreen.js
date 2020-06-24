@@ -23,15 +23,31 @@ const productScreen = (props) => {
             <li>{product.name}</li>
             <li>{product.brand}</li>
             <li>
-              {product.rating} ({product.numReview})
+              {product.rating}star ({product.numReview})
             </li>
             <li>
-              <b>${product.price}</b>
+              price:<b> ${product.price}</b>
             </li>
-            <li>{product.description}</li>
+            <li>description: {product.description}</li>
           </ul>
         </div>
-        <div className=".details-action"></div>
+        <div className="details-action">
+          <ul>
+            <li>price : ${product.price} </li>
+            <li> status : {product.status}</li>
+            <li>
+              Qty:{' '}
+              <select>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+              </select>
+            </li>
+            <li>
+              <button className="button">Add cart</button>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
