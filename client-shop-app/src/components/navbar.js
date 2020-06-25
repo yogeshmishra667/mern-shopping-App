@@ -12,7 +12,9 @@ export default function navbar() {
         <button className="product-menu" onClick={openMenu}>
           &#9776;
         </button>
-        <Link to="/">Yo-shop 🔥</Link>
+        <Link to="/">
+          Yo-shop <span>🔥</span>
+        </Link>
       </div>
       <div className="brand-links">
         <a href="#" className="">

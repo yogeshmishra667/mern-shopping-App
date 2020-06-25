@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from '../components/navbar';
 import Products from '../components/Product-list';
 import ProductScreen from '../components/productScreen';
