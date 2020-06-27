@@ -9,6 +9,17 @@ const app = express();
 const publicPathDir = path.join(__dirname, './public');
 app.use(express.static(publicPathDir)); //fot static file
 
+//for product details
+app.get("/api/products/:id", (req, res) => {
+  const productId = req.params.id;
+  const product = data.products.find(x => x._id === productId);
+  if (product)
+    res.send(product);
+  else
+    res.status(400).send({ msg: "Product Not Found." })
+});
+
+//for product list
 app.get('/api/products', (req, res) => {
   res.send(data.products)
 })
