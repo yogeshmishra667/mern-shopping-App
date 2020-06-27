@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../assets/style/index.css';
-import { listProduct } from '../action/index';
+import { listProducts } from '../action/index';
+import Spinner from './spinner';
 
 function Product_list(props) {
-  //const [products, setProducts] = useState([]);
-  const productList = useSelector((state) => state.productList);
-  const { products, loading, error } = productList;
+  const productsList = useSelector((state) => state.productList);
+  const { products, loading, error } = productsList;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listProduct());
+    dispatch(listProducts());
     //no need to fetch data in here because of use redux and in redux call api in action
 
     // const fetchData = async () => {
@@ -24,7 +24,9 @@ function Product_list(props) {
   }, []);
 
   return loading ? (
-    <div>Loading...</div>
+    <div className="spinner">
+      <Spinner />
+    </div>
   ) : error ? (
     <div>{error}</div>
   ) : (
