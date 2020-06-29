@@ -9,6 +9,7 @@ module.exports = {
       price: '60',
       rating: 4.5,
       numReview: 10,
+      countInStock:5
     },
 
     {
@@ -20,6 +21,7 @@ module.exports = {
       price: '50',
       rating: 5.0,
       numReview: 122,
+      countInStock:4
     },
     {
       _id: '3',
@@ -30,6 +32,7 @@ module.exports = {
       price: '70',
       rating: 4.7,
       numReview: 333,
+      countInStock:5
     },
     {
       _id: '4',
@@ -40,6 +43,7 @@ module.exports = {
       price: '90',
       rating: 4.9,
       numReview: 33,
+      countInStock:0
     },
   ]
 }
