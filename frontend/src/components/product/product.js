@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import '../../assets/style/index.css';
-import { listProducts } from '../../action/index';
+import { listProducts } from '../../action/productAction';
 import Spinner from '../spinner';
 
 function Product_list(props) {

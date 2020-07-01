@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Spinner from '../spinner';
 import { Link } from 'react-router-dom';
-import { detailsProduct } from '../../action/index';
+import { detailsProduct } from '../../action/productAction';
 import '../../assets/style/index.css';
 
 const ProductScreen = (props) => {
