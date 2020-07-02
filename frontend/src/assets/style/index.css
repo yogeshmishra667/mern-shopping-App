@@ -190,6 +190,7 @@ a {
   padding: 0.5rem;
   border-radius: 4px;
   border: none;
+  margin-left: 10px;
 }
 .button:hover {
   background-color: #dd9922;
