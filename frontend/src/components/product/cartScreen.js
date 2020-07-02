@@ -23,6 +23,10 @@ export default function CartScreen(props) {
     };
   }, []);
 
+  const checkoutHandler = () => {
+    props.history.push('/signin?redirect=shipping');
+  };
+
   return (
     <div className="cart">
       <div className="cart-list">
@@ -45,10 +49,17 @@ export default function CartScreen(props) {
                 <div className="cart-name">
                   <div>
                     Qty:
-                    <select>
-                      <option>1</option>
-                      <option>2</option>
-                      <option>3</option>
+                    <select
+                      value={item.product}
+                      onChange={(e) =>
+                        dispatch(addToCart(item.product, e.target.value))
+                      }
+                    >
+                      {[...Array(item.countInStock).keys()].map((x) => (
+                        <option key={x + 1} value={x + 1}>
+                          {x + 1}
+                        </option>
+                      ))}
                     </select>
                     <button
                       type="button"
@@ -73,6 +84,7 @@ export default function CartScreen(props) {
         <button
           className="button primary full-width"
           disabled={cartItems.length == 0}
+          onClick={checkoutHandler}
         >
           Proceed to Checkout
         </button>
