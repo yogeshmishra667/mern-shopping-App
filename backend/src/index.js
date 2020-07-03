@@ -23,6 +23,9 @@ app.get('/api/products', (req, res) => {
   res.send(data.products);
 });
 
+// Routes
+app.use('/api/users', require('../routes/userRoute'));
+
 //for run express server
 const port = process.env.PORT;
 app.listen(port, () => {
