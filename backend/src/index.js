@@ -6,9 +6,9 @@ require('./db/database');
 //init express🍏
 const app = express();
 
-//Set Public Folder 🗄
-const publicPathDir = path.join(__dirname, './public');
-app.use(express.static(publicPathDir)); //fot static file
+// parse application/x-www-form-urlencoded and application/json
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //for product details
 app.get('/api/products/:id', (req, res) => {

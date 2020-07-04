@@ -23,6 +23,7 @@ const loginCtrl = async (req, res) => {
     email: req.body.email,
     password: req.body.password,
   });
+  console.log(req.body.email);
   if (signInUser) {
     res.send({
       _id: signInUser.id,

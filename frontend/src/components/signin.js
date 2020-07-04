@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
+import signIn from '../action/userAction';
+import Spinner from './spinner';
 
 function SigninScreen(props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const userSignin = useSelector((state) => state.userSignin);
+  const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (userInfo) {
+      props.history.push('/');
+    }
     return () => {
       //
     };
-  }, []);
+  }, [userInfo]); //if userIfo data change then it run 🔺
 
   const submitHandler = (e) => {
     e.preventDefault();
+    dispatch(signIn(email, password));
   };
   return (
     <div className="form">
@@ -23,7 +32,15 @@ function SigninScreen(props) {
           <li>
             <h2>Sign-In</h2>
           </li>
-          <li></li>
+
+          <li>
+            {loading && (
+              <div>
+                <Spinner />
+              </div>
+            )}
+            {error && <div>{error}</div>}
+          </li>
           <li>
             <label htmlFor="email">Email</label>
             <input
