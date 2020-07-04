@@ -6,13 +6,17 @@ import ProductScreen from '../components/product/productScreen';
 import Footer from '../components/footer';
 import Sidebar from '../components/sidebar';
 import '../assets/style/index.css';
+
 import cartScreen from './../components/product/cartScreen';
+import SigninScreen from '../components/signin';
+
 function App() {
   return (
     <BrowserRouter>
       <div className="grid-container">
         <Navbar />
         <Sidebar />
+        <Route path="/signin" component={SigninScreen} />
         <Route path="/products/:id" component={ProductScreen} />
         <Route path="/cart/:id?" component={cartScreen} />
         <Route path="/" exact={true} component={Products} />

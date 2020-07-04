@@ -20,9 +20,7 @@ export default function navbar() {
         <a href="#" className="">
           cart
         </a>
-        <a href="#" className="">
-          signin
-        </a>
+        <Link to="/signin">Signin</Link>
       </div>
     </header>
   );
