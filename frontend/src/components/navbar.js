@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/style/index.css';
+import { useSelector } from 'react-redux';
 
-export default function navbar() {
+export default function Navbar() {
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
   const openMenu = () => {
     document.querySelector('.sidebar').classList.add('open');
   };
@@ -20,7 +24,12 @@ export default function navbar() {
         <a href="#" className="">
           cart
         </a>
-        <Link to="/signin">Signin</Link>
+
+        {userInfo ? (
+          <Link>{userInfo.name}</Link>
+        ) : (
+          <Link to="/signin">Signin</Link>
+        )}
       </div>
     </header>
   );

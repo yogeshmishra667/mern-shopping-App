@@ -39,7 +39,7 @@ body {
 .brand-links a {
   color: #ffff;
   text-decoration: none;
-  margin-right: 5px;
+  margin: 0px 10px;
 }
 .brand-links :hover {
   color: #f77f00;

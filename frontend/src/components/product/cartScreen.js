@@ -83,7 +83,7 @@ export default function CartScreen(props) {
         </h3>
         <button
           className="button primary full-width"
-          disabled={cartItems.length == 0}
+          disabled={cartItems.length === 0}
           onClick={checkoutHandler}
         >
           Proceed to Checkout
