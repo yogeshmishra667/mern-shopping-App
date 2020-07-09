@@ -5,7 +5,7 @@ import Spinner from './spinner';
 
 function ProductsScreen(props) {
   const [name, setName] = useState('');
-  const [images, setImages] = useState('');
+  const [image, setImage] = useState('');
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
   const [category, setCategory] = useState('');
@@ -29,15 +29,15 @@ function ProductsScreen(props) {
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(
-      saveProduct(
+      saveProduct({
         name,
-        images,
-        brand,
         price,
+        image,
+        brand,
         category,
         countInStock,
-        description
-      )
+        description,
+      })
     );
   };
   return (
@@ -70,10 +70,10 @@ function ProductsScreen(props) {
           <li>
             <label htmlFor="image">images</label>
             <input
-              type="image"
+              type="text"
               name="image"
               id="image"
-              onChange={(e) => setImages(e.target.value)}
+              onChange={(e) => setImage(e.target.value)}
             ></input>
           </li>
           <li>

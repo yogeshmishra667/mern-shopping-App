@@ -1,14 +1,11 @@
 const express = require('express');
-const {
-  newProductCtrl,
-  productListCtrl,
-} = require('../controllers/product.ctrl');
+const ctrl = require('../controllers/product.ctrl');
 
 const router = express.Router();
 
 // for product list
-router.get('/', productListCtrl);
+router.get('/', ctrl.productListCtrl);
 //for create new product
-router.post('/', newProductCtrl);
+router.post('/', ctrl.newProductCtrl);
 
 module.exports = router;
