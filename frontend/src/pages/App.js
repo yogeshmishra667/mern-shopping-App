@@ -10,6 +10,7 @@ import '../assets/style/index.css';
 import cartScreen from './../components/product/cartScreen';
 import SigninScreen from '../components/signin';
 import RegisterScreen from './../components/userRegister';
+import ProductsScreen from '../components/DproductScreen';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <div className="grid-container">
         <Navbar />
         <Sidebar />
+        <Route path="/products" component={ProductsScreen} />
         <Route path="/signin" component={SigninScreen} />
         <Route path="/register" component={RegisterScreen} />
         <Route path="/products/:id" component={ProductScreen} />

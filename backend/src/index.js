@@ -10,21 +10,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-//for product details
-app.get('/api/products/:id', (req, res) => {
-  const productId = req.params.id;
-  const product = data.products.find((x) => x._id === productId);
-  if (product) res.send(product);
-  else res.status(400).send({ msg: 'Product Not Found.' });
-});
-
-//for product list
-app.get('/api/products', (req, res) => {
-  res.send(data.products);
-});
-
 // Routes
 app.use('/api/users', require('../routes/userRoute'));
+app.use('/api/products', require('../routes/productRouter'));
 
 //for run express server
 const port = process.env.PORT;

@@ -1,5 +1,5 @@
 const User = require('../model/userModel');
-const getToken = require('../middleware/auth');
+const { getToken } = require('../middleware/auth');
 
 //for new user
 const newUser = async (req, res) => {
@@ -23,7 +23,6 @@ const loginCtrl = async (req, res) => {
     email: req.body.email,
     password: req.body.password,
   });
-  console.log(req.body.email);
   if (signInUser) {
     res.send({
       _id: signInUser.id,
@@ -37,7 +36,27 @@ const loginCtrl = async (req, res) => {
   }
 };
 
+// for user register
+const registerCtrl = async (req, res) => {
+  const registerUser = new User(req.body);
+  try {
+    const user = await registerUser.save();
+    if (user) {
+      res.send({
+        _id: user.id,
+        name: user.name,
+        email: user.email,
+        isAdmin: user.isAdmin,
+        token: getToken(user),
+      });
+    }
+  } catch (error) {
+    res.status(401).send({ msg: 'Invalid Email or Password.' });
+  }
+};
+
 module.exports = {
   newUser,
   loginCtrl,
+  registerCtrl,
 };
