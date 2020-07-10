@@ -7,5 +7,6 @@ const router = express.Router();
 router.get('/', ctrl.productListCtrl);
 //for create new product
 router.post('/', ctrl.newProductCtrl);
-
+//for update product
+router.put('/:id', ctrl.updateCtrl);
 module.exports = router;
