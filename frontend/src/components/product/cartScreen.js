@@ -24,7 +24,7 @@ export default function CartScreen(props) {
   }, []);
 
   const checkoutHandler = () => {
-    props.history.push('/signin?redirect=shipping');
+    props.history.push('/signin?redirect=shopping');
   };
 
   return (
@@ -82,9 +82,9 @@ export default function CartScreen(props) {
           {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
         </h3>
         <button
+          onClick={checkoutHandler}
           className="button primary full-width"
           disabled={cartItems.length === 0}
-          onClick={checkoutHandler}
         >
           Proceed to Checkout
         </button>

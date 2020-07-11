@@ -5,6 +5,15 @@ const productListCtrl = async (req, res) => {
   const products = await Product.find({});
   res.send(products);
 };
+// for display checkout screen
+const checkoutCtrl = async (req, res) => {
+  const product = await Product.findOne({ _id: req.params.id });
+  if (product) {
+    res.send(product);
+  } else {
+    res.status(404).send({ message: 'Product Not Found.' });
+  }
+};
 
 //for create new product
 const newProductCtrl = async (req, res) => {
@@ -55,6 +64,7 @@ const deleteCtrl = async (req, res) => {
 
 module.exports = {
   productListCtrl,
+  checkoutCtrl,
   newProductCtrl,
   updateCtrl,
   deleteCtrl,

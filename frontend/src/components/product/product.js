@@ -33,11 +33,11 @@ function Product_list(props) {
     products.map((product) => {
       return (
         <li className="product">
-          <Link to={`/products/${product._id}`}>
+          <Link to={`/product/${product._id}`}>
             <img src={product.image} alt="slim shirt" className="product-img" />
           </Link>
           <div className="product-name">
-            <Link to={`/products/${product._id}`}>{product.name}</Link>
+            <Link to={`/product/${product._id}`}>{product.name}</Link>
           </div>
           <div className="product-brand">{product.brand}</div>
           <div className="product-price">${product.price}</div>

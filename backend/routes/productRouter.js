@@ -6,6 +6,8 @@ const router = express.Router();
 
 // for product list
 router.get('/', ctrl.productListCtrl);
+//for checkout Screen
+router.get('/:id', ctrl.checkoutCtrl);
 //for create new product
 router.post('/', isAuth, isAdmin, ctrl.newProductCtrl);
 //for update product
