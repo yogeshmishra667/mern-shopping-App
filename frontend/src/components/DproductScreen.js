@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { saveProduct, listProducts } from '../action/productAction';
+import {
+  saveProduct,
+  listProducts,
+  deleteProduct,
+} from '../action/productAction';
 import Spinner from './spinner';
 
 function ProductsScreen(props) {
@@ -23,14 +27,27 @@ function ProductsScreen(props) {
     success: successSave,
     error: errorSave,
   } = productSave;
+
+  //for delete product
+  const productDelete = useSelector((state) => state.productDelete);
+  const {
+    loading: loadingDelete,
+    success: successDelete,
+    error: errorDelete,
+  } = productDelete;
+
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (successSave) {
+      //that means when you done update data model automatic close
+      setModalVisible(false);
+    }
     dispatch(listProducts());
     return () => {
       //
     };
-  }, []); //if userIfo data change then it run 🔺
+  }, [successSave, successDelete]); //◀ if data update then re-render list
 
   const openModal = (product) => {
     setModalVisible(true);
@@ -58,6 +75,10 @@ function ProductsScreen(props) {
         description,
       })
     );
+  };
+
+  const deleteHandler = (product) => {
+    dispatch(deleteProduct(product._id));
   };
   return (
     <div className="content content-margined">
@@ -203,7 +224,12 @@ function ProductsScreen(props) {
                   <button className="button" onClick={() => openModal(product)}>
                     Edit
                   </button>{' '}
-                  <button className="button">Delete</button>
+                  <button
+                    className="button"
+                    onClick={() => deleteHandler(product)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

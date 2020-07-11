@@ -1,5 +1,4 @@
 const Product = require('../model/productModel');
-//import { isAuth, isAdmin } from '../util';
 
 //for display product list
 const productListCtrl = async (req, res) => {
@@ -42,8 +41,21 @@ const updateCtrl = async (req, res) => {
   return res.status(500).send({ message: ' Error in Updating Product.' });
 };
 
+//for delete product
+const deleteCtrl = async (req, res) => {
+  const productId = req.params.id;
+  const product = await Product.findById(productId);
+  if (product) {
+    await product.remove();
+    res.send({ message: 'Product deleted' });
+  } else {
+    res.status(500).send({ message: ' Error in delete Product.' });
+  }
+};
+
 module.exports = {
   productListCtrl,
   newProductCtrl,
   updateCtrl,
+  deleteCtrl,
 };
