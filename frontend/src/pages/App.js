@@ -11,6 +11,7 @@ import cartScreen from './../components/product/cartScreen';
 import SigninScreen from '../components/signin';
 import RegisterScreen from './../components/userRegister';
 import ProductsScreen from '../components/DproductScreen';
+import ShippingScreen from './../components/shippingScreen';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <div className="grid-container">
         <Navbar />
         <Sidebar />
+        <Route path="/shopping" component={ShippingScreen} />
         <Route path="/products" component={ProductsScreen} />
         <Route path="/signin" component={SigninScreen} />
         <Route path="/register" component={RegisterScreen} />
