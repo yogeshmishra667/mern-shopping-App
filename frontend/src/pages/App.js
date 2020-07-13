@@ -12,6 +12,8 @@ import SigninScreen from '../components/signin';
 import RegisterScreen from './../components/userRegister';
 import ProductsScreen from '../components/DproductScreen';
 import ShippingScreen from './../components/shippingScreen';
+import PaymentScreen from './../components/paymentScreen';
+import PlaceOrderScreen from './../components/placeOrderScreen';
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       <div className="grid-container">
         <Navbar />
         <Sidebar />
+        <Route path="/placeorder" component={PlaceOrderScreen} />
         <Route path="/shopping" component={ShippingScreen} />
+        <Route path="/payment" component={PaymentScreen} />
         <Route path="/products" component={ProductsScreen} />
         <Route path="/signin" component={SigninScreen} />
         <Route path="/register" component={RegisterScreen} />

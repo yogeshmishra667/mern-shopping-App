@@ -3,6 +3,7 @@ import {
   CART_ADD_ITEM,
   CART_REMOVE_ITEM,
   CART_SAVE_SHIPPING,
+  CART_SAVE_PAYMENT,
 } from '../constants/cartConstants';
 import Cookie from 'js-cookie';
 const addToCart = (productId, qty) => async (dispatch, getState) => {
@@ -36,8 +37,8 @@ const removeToCart = (productId, getState) => async (dispatch) => {
 const saveShipping = (data) => (dispatch) => {
   dispatch({ type: CART_SAVE_SHIPPING, payload: data });
 };
-// const savePayment = (data) => (dispatch) => {
-//   dispatch({ type: CART_SAVE_PAYMENT, payload: data });
-// };
+const savePayment = (data) => (dispatch) => {
+  dispatch({ type: CART_SAVE_PAYMENT, payload: data });
+};
 
-export { addToCart, removeToCart, saveShipping };
+export { addToCart, removeToCart, saveShipping, savePayment };
