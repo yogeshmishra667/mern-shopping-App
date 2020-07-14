@@ -8,7 +8,7 @@ export default function sidebar() {
     <aside className="sidebar">
       <h3>shopping catagories</h3>
       <button className="closeMenu" onClick={closeMenu}>
-        &#x274C;
+        <span>&#x274C;</span>
       </button>
       <ul>
         <li>

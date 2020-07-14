@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "client":"cd frontend && npm start",
     "start": "node backend/src/index.js",
     "dev": "env-cmd -f backend/config/dev.env nodemon backend/src/index.js"
   },

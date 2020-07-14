@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 export default function Navbar() {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
-
   const openMenu = () => {
     document.querySelector('.sidebar').classList.add('open');
   };
@@ -21,10 +20,7 @@ export default function Navbar() {
         </Link>
       </div>
       <div className="brand-links">
-        <a href="#" className="">
-          cart
-        </a>
-
+        <Link to="/cart">cart</Link>
         {userInfo ? (
           <Link>{userInfo.name}</Link>
         ) : (
